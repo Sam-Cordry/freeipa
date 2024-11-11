@@ -407,8 +407,10 @@ class baseuser(LDAPObject):
             label=_('SSH public key fingerprint'),
             flags={'virtual_attribute', 'no_create', 'no_update', 'no_search'},
         ),
-        Str('pgppubkey*',
+        Str('pgpkey*',
+            cli_name='pgppubkey',
             label=_('PGP public key'),
+            flags={'virtual_attribute', 'no_create', 'no_update', 'no_search'},
         ),
         StrEnum(
             'ipauserauthtype*',

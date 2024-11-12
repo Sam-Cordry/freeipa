@@ -410,7 +410,6 @@ class baseuser(LDAPObject):
         Str('pgpkey*',
             cli_name='pgppubkey',
             label=_('PGP public key'),
-            flags={'virtual_attribute', 'no_create', 'no_update', 'no_search'},
         ),
         StrEnum(
             'ipauserauthtype*',

@@ -51,6 +51,9 @@ attributeTypes: (1.3.6.1.4.1.11591.2.4.1.2 NAME 'gpgSubFingerprint' DESC 'Finger
 attributeTypes: (1.3.6.1.4.1.11591.2.4.1.3 NAME 'gpgMailbox' DESC 'The UTF-8 encoded addr-spec of a mailbox' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.15)
 objectClasses: (1.3.6.1.4.1.3401.8.2.23 NAME 'pgpServerInfo' DESC 'An OpenPGP public keyblock store' SUP top STRUCTURAL MUST ( cn $ pgpBaseKeySpaceDN ) MAY ( pgpSoftware $ pgpVersion ) )
 objectClasses: (1.3.6.1.4.1.3401.8.2.24 NAME 'pgpKeyInfo' DESC 'An OpenPGP public keyblock' SUP top STRUCTURAL MUST ( pgpCertID $ pgpKey ) MAY ( pgpDisabled $ pgpKeyID $ pgpKeyType $ pgpUserID $ pgpKeyCreateTime $ pgpSignerID $ pgpRevoked $ pgpSubKeyID $ pgpKeySize $ pgpKeyExpireTime $ gpgFingerprint $ gpgSubFingerprint $ gpgMailbox ) )
+
+objectClasses: (1.3.6.1.4.1.3401.8.2.25 NAME 'ipaPgpGroupOfPubKeys' ABSTRACT MAY pgpKey)
+objectClasses: (1.3.6.1.4.1.3401.8.2.26 NAME 'ipaPgpUser' SUP ipaPgpGroupOfPubKeys AUXILIARY)
 ```
 
 ## Implementation
@@ -61,19 +64,16 @@ This feature does not require any new dependencies or any new files in Backup an
 
 ### UI
 
-This feature adds an "Add OpenPGP key" button to the user management page (if you have the appropriate permissions).
+This feature adds an "PGP key" button to the user management page (if you have the appropriate permissions).
 
 ### CLI
 
-Overview of the CLI commands. Example:
+Additional flags added to user-\* suite of subcommands.
 
-| Command    | Options    |
-| ---------- | ---------- |
-| gpg-add    | --user=Str |
-| gpg-del    | --user=Str |
-| gpg-find   | --user=Str |
-| gpg-show   | --user=Str |
-| gpg-create | --user=Str |
+| Command  | (Additional) Flags |
+| -------- | ------------------ |
+| user-add | --pgppubkey=STR    |
+| user-mod | --pgppubkey=STR    |
 
 ### Configuration
 

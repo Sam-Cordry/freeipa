@@ -281,6 +281,11 @@ return {
                             label: '@i18n:objects.sshkeystore.keys'
                         },
                         {
+                            $type: 'pgpkeys',
+                            name: 'ipapgppubkey',
+                            label: '@i18n:objects.pgpkeystore.keys'
+                        },
+                        {
                             $type: 'idviews_certs',
                             name: 'usercertificate',
                             label: '@i18n:objects.cert.certificates'

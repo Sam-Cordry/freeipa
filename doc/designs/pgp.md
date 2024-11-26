@@ -83,6 +83,12 @@ KRA must be setup in order to store OpenPGP private keys.
 
 Test scenarios that will be transformed to test cases for FreeIPA [Continuous Integration](https://www.freeipa.org/page/V3/Integration_testing) during implementation or review phase. This can be also link to source in [pagure](https://pagure.io/freeipa.git) with the test, if appropriate.
 
+- Key is valid and parsed correctly
+- Key is invalid, raising a ValueError
+- Key is invalid,
+- Key is changed by a user with proper permissions, operation succeeds
+- Key is changed by a user without the proper permissions, operation fails
+
 ## Troubleshooting and debugging
 
 This feature creates LDAP entries to store OpenPGP public keys and information about them, and relies upon them to fetch that same information on request.

@@ -411,7 +411,7 @@ class baseuser(LDAPObject):
         ),
         Str('pgpkey*',validate_pgppubkey,
             cli_name='pgppubkey',
-            label=_('PGP Public Key').
+            label=_('PGP Public Key'),
             normalizer=normalize_pgppubkey,
         ),
         StrEnum(

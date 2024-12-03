@@ -112,11 +112,6 @@ return {
                             label: '@i18n:objects.sshkeystore.keys'
                         },
                         {
-                            $type: 'pgpkeys',
-                            name: 'ipapgppubkey',
-                            label: '@i18n:objects.pgpkeystore.keys'
-                        },
-                        {
                             $type: 'multivalued',
                             name: 'macaddress',
                             flags: ['w_if_no_aci']

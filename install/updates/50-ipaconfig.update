@@ -4,7 +4,6 @@ replace: ipaSELinuxUserMapOrder: ipaSELinuxUserMapOrder: guest_u:s0$$xguest_u:s0
 replace: ipaSELinuxUserMapOrder: guest_u:s0$$xguest_u:s0$$user_u:s0-s0:c0.c1023$$staff_u:s0-s0:c0.c1023$$unconfined_u:s0-s0:c0.c1023::guest_u:s0$$xguest_u:s0$$user_u:s0$$staff_u:s0-s0:c0.c1023$$unconfined_u:s0-s0:c0.c1023
 add:ipaSELinuxUserMapDefault: $SELINUX_USERMAP_DEFAULT
 add:ipaUserObjectClasses: ipasshuser
-add:ipaUserObjectClasses: ipapgpuser
 remove:ipaConfigString:AllowLMhash
 add:objectClass: ipaUserAuthTypeClass
 add:objectClass: ipaNameResolutionData

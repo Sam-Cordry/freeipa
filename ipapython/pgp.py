@@ -50,3 +50,6 @@ class PGPPublicKey:
             r"^[\w\+\/=\s]*$",
             key,
         )
+
+    def key(self):
+        return self._key

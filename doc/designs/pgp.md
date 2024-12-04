@@ -2,8 +2,6 @@
 
 ## Overview
 
-Short overview of the problem set and any background material or references one would need to understand the details.
-
 Implementation of OpenPGP key storage and related encryption features.
 
 Short feature list:
@@ -15,15 +13,21 @@ Short feature list:
 
 ## Use Cases
 
-Walk through one or more full examples of how the feature will be used. These should not all be the simplest cases.
+- The administrator or the user registers a public PGP key into IPA, associated with a user account.
+  The registration process validates the public key in case of erroneous input.
+- The user can register a private PGP key into IPA, which can be used to automatically sign or encrypt as needed for
+- The administrator or the user can enroll a hardware token, creating a public and a private key associated with a user.
 
 ## How to Use
 
-This a starting point for design discussions.
+### Registering Public PGP Key
 
-Easy to follow instructions how to use the new feature according to the [use cases](#use-cases) described above. FreeIPA user needs to be able to follow the steps and demonstrate the new features.
+- The administrator or the user provides a public PGP key to become associated with a user.
+  This can be done as a part of user account creation or after as an addition to an existing account.
 
-The chapter may be divided in sub-sections per [Use Case](#use-cases).
+### Registering Private PGP Key
+
+### Enrolling Hardware Token
 
 ## Design
 
@@ -68,7 +72,7 @@ This feature adds an "PGP key" button to the user management page (if you have t
 
 ### CLI
 
-Additional flags added to user-\* suite of subcommands.
+Additional flags added to some of the user-\* subcommands.
 
 | Command  | (Additional) Flags |
 | -------- | ------------------ |
